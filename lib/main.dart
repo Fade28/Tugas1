@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+String misal = "Ahmad Fatih";
+List bulan = ['januari', 12, 'Candra'];
+
 class Hewan {
   String nama;
 
@@ -14,28 +17,40 @@ class Hewan {
 Future getDataFromServer(int delay) async {
   print("get");
   await Future.delayed(Duration(seconds: delay));
-  if (delay % 2 == 0) {
-    return "Bilangan Genap";
-  } else
-    return "Bilangan Ganjil";
-  // return "Data dari server";
+  return "Data dari server";
+}
+
+int hitung(int a, int b) {
+  return a + b;
+}
+
+void panggil() {
+  print("ini panggil");
+  print("ini panggil");
+  print("ini panggil");
+  print("ini panggil");
+  print("ini panggil");
 }
 
 void main() {
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3189517867.
-  // getDataFromServer(6).then((value) => print(value));
-  runApp(MyApp());
+  getDataFromServer(6).then((value) => print(value));
+  // print(bulan[1]);
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        /*asdadad
+        asdasdasd
+        asdasd
+        asdasdasd
+        */
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -54,20 +69,22 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Tugas1(),
+      home: const MyWidget(),
     );
   }
 }
 
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
+    String nama;
     return Material(
       child: SafeArea(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.14,
@@ -90,7 +107,6 @@ class MyWidget extends StatelessWidget {
                     margin: EdgeInsets.only(left: 20),
                     child: Icon(Icons.arrow_back)),
                 Text(
-                  "Profil",
                   style: TextStyle(
                     fontSize: 25,
                   ),
@@ -108,7 +124,7 @@ class MyWidget extends StatelessWidget {
             ),
           ),
           CircleAvatar(
-            radius: 60,// Size of the avatar
+            radius: 60, // Size of the avatar
             backgroundColor: Colors.blue, // Background color of the circle
             child: Icon(
               Icons.person, // Icon inside the circle
@@ -117,71 +133,147 @@ class MyWidget extends StatelessWidget {
             ),
           ),
           Container(
-              padding: const EdgeInsets.all(10),
-              margin: const EdgeInsets.all(40),
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.blue.shade400,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Nama",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        "Ahmad Fatih Fadhlillah",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        "TTL",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 36,
-                      ),
-                      Text(
-                        "Dili, 28 Februari 1996",
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.facebook, size: 50, color: Colors.red),
-                      Icon(FontAwesomeIcons.whatsapp,
-                          size: 50, color: Colors.green),
-                      Icon(FontAwesomeIcons.instagram,
-                          size: 50, color: Colors.blue),
-                      Icon(FontAwesomeIcons.twitter,
-                          size: 50, color: Colors.purple),
-                    ],
-                  )
-                ],
-              ),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(40),
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue.shade400,
+              borderRadius: BorderRadius.circular(10),
             ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      "Nama",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Ahmad Fatih Fadhlillah",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "TTL",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 23,
+                    ),
+                    Text(
+                      "Dili, 28 Februari 1996",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.facebook, size: 50, color: Colors.red),
+                    Icon(FontAwesomeIcons.whatsapp,
+                        size: 50, color: Colors.green),
+                    Icon(FontAwesomeIcons.instagram,
+                        size: 50, color: Colors.blue),
+                    Icon(FontAwesomeIcons.twitter,
+                        size: 50, color: Colors.purple),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              // Background widget
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.1,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                  color: Colors.lightBlue,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
+                ),
+              ),
+              // Positioned widget
+              Positioned(
+                top: 15,
+                left: MediaQuery.of(context).size.width * 0.15,
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.home,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Home",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Positioned(
+                top: -40,
+                left: MediaQuery.of(context).size.width * 0.40,
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Icon(
+                    Icons.camera,
+                    size: 70,
+                    color: Colors.lightBlue,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 15,
+                left: MediaQuery.of(context).size.width * 0.70,
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.person,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Profil",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       )),
     );
